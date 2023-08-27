@@ -25,18 +25,18 @@ function serverWriteMessage(message) {
 }
 
 
-btnSend.addEventListener("click", async () => {
+btnSend.addEventListener("click", () => {
     message = input.value;
 
     websoket = new WebSocket(wsUrl);
   
-    websoket.onopen = await function (e) {
+    websoket.onopen = function (e) {
         websoket.send(message);
     };
   
     myWriteMessage(message);
   
-    websoket.onmessage = await function (e) {
+    websoket.onmessage = function (e) {
         serverWriteMessage(e.data);
     };
   });

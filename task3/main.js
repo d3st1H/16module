@@ -50,13 +50,13 @@ function sendGeo() {
     winChat.appendChild(winMessage);
 }
 
-  btnGeo.addEventListener("click", () => {
+btnGeo.addEventListener("click", () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         myPosition = `https://www.openstreetmap.org/#map=10/${latitude}/${longitude}`;
-  
+    
         sendGeo();
         let geoBox = document.querySelector(".my-geo");
         let link = document.createElement("a");
@@ -67,4 +67,4 @@ function sendGeo() {
         winMessage.classList.remove("my_geo");
       });
     }
-  });
+});

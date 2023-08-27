@@ -62,7 +62,7 @@ btnGeo.addEventListener("click", () => {
         let link = document.createElement("a");
         link.href = myPosition;
         link.target = "_blank";
-        link.appendChild(document.createTextNode("Геолокация"));
+        link.appendChild(document.createTextNode("Геопозиция"));
         geoBox.appendChild(link);
         winMessage.classList.remove("my-geo");
       });
